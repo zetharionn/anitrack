@@ -6,9 +6,10 @@ import {
 	NavbarContent,
 	NavbarItem
 } from '@nextui-org/react'
+import { FC } from 'react'
 import { ROUTES } from '@shared/lib/constants/routes'
 
-export const Home = () => {
+const Home: FC = () => {
 	return (
 		<div className='flex flex-col h-screen'>
 			<Navbar>
@@ -57,3 +58,5 @@ export const Home = () => {
 		</div>
 	)
 }
+
+export default Home
