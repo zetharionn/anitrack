@@ -2,6 +2,7 @@ import { lazy } from 'react'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import { ROUTES } from '@shared/lib/constants/routes'
 import { WithSuspense } from '@shared/lib/hocs/WithSuspense'
+import { Layout } from './Layout'
 import NotFound from './NotFound'
 
 const Home = WithSuspense(lazy(async () => import('./Home')))
@@ -12,10 +13,12 @@ export const Routing = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path={ROUTES.HOME} element={<Home />} />
-				<Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
-				<Route path={ROUTES.REGISTRATION} element={<Registration />} />
-				<Route path={ROUTES.LOGIN} element={<Login />} />
+				<Route element={<Layout />}>
+					<Route index path={ROUTES.HOME} element={<Home />} />
+					<Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
+					<Route path={ROUTES.REGISTRATION} element={<Registration />} />
+					<Route path={ROUTES.LOGIN} element={<Login />} />
+				</Route>
 			</Routes>
 		</BrowserRouter>
 	)
