@@ -19,12 +19,12 @@ const Layout = () => {
 				</NavbarBrand>
 				<NavbarContent justify='end'>
 					<NavbarItem>
-						<Button as={Link} href='./registration' variant='bordered'>
+						<Button as={Link} href='/registration' variant='bordered'>
 							Sign up
 						</Button>
 					</NavbarItem>
 					<NavbarItem>
-						<Button as={Link} href='./login' variant='light'>
+						<Button as={Link} href='/login' variant='light'>
 							Sign in
 						</Button>
 					</NavbarItem>

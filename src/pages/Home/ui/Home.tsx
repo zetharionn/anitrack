@@ -10,7 +10,7 @@ const Home: FC = () => {
 					Stay on top of your anime viewing habits with AniTrack tracking
 					features.
 				</p>
-				<Button color='primary' as={Link} href='./registration'>
+				<Button color='primary' as={Link} href='/registration'>
 					Start Tracking
 				</Button>
 			</div>

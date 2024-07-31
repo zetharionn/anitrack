@@ -1,3 +1,4 @@
 {
-	"src/**/*.{ts,tsx}": ["pnpm lint"]
+	"src/**/*.{ts,tsx}": ["pnpm lint"],
+	"src": ["pnpm lint:steiger"]
 }
