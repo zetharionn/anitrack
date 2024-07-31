@@ -1,6 +1,5 @@
 import { Button, Link } from '@nextui-org/react'
 import { FC } from 'react'
-import { ROUTES } from '@shared/lib/constants/routes'
 
 const Home: FC = () => {
 	return (
@@ -11,7 +10,7 @@ const Home: FC = () => {
 					Stay on top of your anime viewing habits with AniTrack tracking
 					features.
 				</p>
-				<Button color='primary' as={Link} href={ROUTES.REGISTRATION}>
+				<Button color='primary' as={Link} href='./registration'>
 					Start Tracking
 				</Button>
 			</div>

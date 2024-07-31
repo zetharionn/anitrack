@@ -1,23 +1,19 @@
-import { lazy } from 'react'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import { ROUTES } from '@shared/lib/constants/routes'
-import { WithSuspense } from '@shared/lib/hocs/WithSuspense'
-import { Layout } from './Layout'
+import Home from './Home'
+import Layout from './Layout'
+import Login from './Login'
 import NotFound from './NotFound'
-
-const Home = WithSuspense(lazy(async () => import('./Home')))
-const Registration = WithSuspense(lazy(async () => import('./Registration')))
-const Login = WithSuspense(lazy(async () => import('./Login')))
+import Registration from './Registration'
 
 export const Routing = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
 				<Route element={<Layout />}>
-					<Route index path={ROUTES.HOME} element={<Home />} />
-					<Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
-					<Route path={ROUTES.REGISTRATION} element={<Registration />} />
-					<Route path={ROUTES.LOGIN} element={<Login />} />
+					<Route index path='/' element={<Home />} />
+					<Route path='/notfound' element={<NotFound />} />
+					<Route path='/registration' element={<Registration />} />
+					<Route path='/login' element={<Login />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

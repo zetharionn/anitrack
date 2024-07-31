@@ -7,9 +7,8 @@ import {
 	NavbarItem
 } from '@nextui-org/react'
 import { Outlet } from 'react-router-dom'
-import { ROUTES } from '@shared/lib/constants/routes'
 
-export const Layout = () => {
+const Layout = () => {
 	return (
 		<>
 			<Navbar>
@@ -20,12 +19,12 @@ export const Layout = () => {
 				</NavbarBrand>
 				<NavbarContent justify='end'>
 					<NavbarItem>
-						<Button as={Link} href={ROUTES.REGISTRATION} variant='bordered'>
+						<Button as={Link} href='./registration' variant='bordered'>
 							Sign up
 						</Button>
 					</NavbarItem>
 					<NavbarItem>
-						<Button as={Link} href={ROUTES.LOGIN} variant='light'>
+						<Button as={Link} href='./login' variant='light'>
 							Sign in
 						</Button>
 					</NavbarItem>
@@ -53,3 +52,5 @@ export const Layout = () => {
 		</>
 	)
 }
+
+export default Layout
