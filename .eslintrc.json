@@ -20,12 +20,23 @@
 		},
 		"sourceType": "module"
 	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		},
+		"import/resolver": {
+			"typescript": {
+				"alwaysTryTypes": true
+			}
+		}
+	},
 	"ignorePatterns": ["dist", ".eslintrc.json"],
 	"plugins": ["@typescript-eslint", "react", "react-refresh", "prettier"],
 	"rules": {
 		"react/prop-types": 0,
 		"react/display-name": 0,
 		"react-hooks/exhaustive-deps": 0,
-		"react/react-in-jsx-scope": 0
+		"react/react-in-jsx-scope": 0,
+		"import/no-internal-modules": 0
 	}
 }
