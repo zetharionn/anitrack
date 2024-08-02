@@ -11,7 +11,7 @@ export default {
 	darkMode: 'class',
 	plugins: [
 		nextui({
-			defaultTheme: 'light',
+			defaultTheme: 'dark',
 			themes: {
 				light: lightTheme,
 				dark: darkTheme

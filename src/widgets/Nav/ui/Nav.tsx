@@ -13,7 +13,7 @@ export const Nav = () => {
 		<Navbar>
 			<NavbarBrand>
 				<Link href={ROUTES.HOME}>
-					<h1 className='md:text-xl lg:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#ddca1b] to-[#7a10cc]'>
+					<h1 className='md:text-xl lg:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#f5d63b] to-[#9739f0]'>
 						AniTrack
 					</h1>
 				</Link>
