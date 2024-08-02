@@ -12,8 +12,10 @@ export const Nav = () => {
 	return (
 		<Navbar>
 			<NavbarBrand>
-				<Link href={ROUTES.HOME} underline='hover'>
-					<h1 className='font-bold text-lg'>AniTrack</h1>
+				<Link href={ROUTES.HOME}>
+					<h1 className='md:text-xl lg:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-[#ddca1b] to-[#7a10cc]'>
+						AniTrack
+					</h1>
 				</Link>
 			</NavbarBrand>
 			<NavbarContent justify='end'>
