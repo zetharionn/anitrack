@@ -1,7 +1,7 @@
 {
 	"name": "anitrack",
 	"version": "1.0.0",
-	"description": "Watch and Track on AniTrack!",
+	"description": "Watch and Track on AniTrack",
 	"author": "zetharionn",
 	"license": "MIT",
 	"type": "module",
