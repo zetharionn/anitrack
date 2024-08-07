@@ -1,7 +1,7 @@
 {
 	"name": "anitrack",
 	"version": "1.0.0",
-	"description": "Track your Anime Stats on AniTrack!",
+	"description": "Watch and Track on AniTrack!",
 	"author": "zetharionn",
 	"license": "MIT",
 	"type": "module",
@@ -15,13 +15,13 @@
 		"lint:steiger": "steiger ./src",
 		"prepare": "husky"
 	},
-	"homepage": "https://github.com/zetharionn/AniTrack",
+	"homepage": "https://github.com/zetharionn/anitrack",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/zetharionn/AniTrack"
+		"url": "git+https://github.com/zetharionn/anitrack"
 	},
 	"bugs": {
-		"url": "https://github.com/zetharionn/AniTrack/issues"
+		"url": "https://github.com/zetharionn/anitrack/issues"
 	},
 	"keywords": [
 		"react",
