@@ -1,5 +1,4 @@
 import { nextui } from '@nextui-org/react'
-import { lightTheme, darkTheme } from './src/app/ui/themes/index.ts'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -11,11 +10,7 @@ export default {
 	darkMode: 'class',
 	plugins: [
 		nextui({
-			defaultTheme: 'dark',
-			themes: {
-				light: lightTheme,
-				dark: darkTheme
-			}
+			defaultTheme: 'dark'
 		})
 	]
 }
