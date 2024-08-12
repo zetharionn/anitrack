@@ -22,7 +22,7 @@ const Home: FC = () => {
 					variant='shadow'
 					size='lg'
 					as={Link}
-					href={ROUTES.REGISTRATION}
+					href={ROUTES.SIGN_UP}
 				>
 					Start Tracking
 				</Button>

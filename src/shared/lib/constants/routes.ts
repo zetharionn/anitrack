@@ -1,6 +1,6 @@
 export const enum ROUTES {
 	HOME = '/',
 	NOT_FOUND = '*',
-	REGISTRATION = '/registration',
-	LOGIN = '/login'
+	SIGN_UP = '/signup',
+	SIGN_IN = '/signin'
 }
