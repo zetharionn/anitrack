@@ -1,3 +1,1 @@
-import { supabase } from './instance'
-
-export { supabase }
+export { authService } from './instance'
