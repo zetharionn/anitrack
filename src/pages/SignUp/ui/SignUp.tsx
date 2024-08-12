@@ -1,7 +1,7 @@
 import { AuthForm } from '@features/AuthForm'
 import { FC } from 'react'
 
-const Login: FC = () => {
+const SignUp: FC = () => {
 	return (
 		<div>
 			<AuthForm />
@@ -9,4 +9,4 @@ const Login: FC = () => {
 	)
 }
 
-export default Login
+export default SignUp

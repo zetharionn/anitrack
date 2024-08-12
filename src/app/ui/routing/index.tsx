@@ -10,12 +10,12 @@ const Home = WithSuspense(
 	lazy(async () => import('@pages/Home')),
 	Loading
 )
-const Registration = WithSuspense(
-	lazy(async () => import('@pages/Registration')),
+const SignUp = WithSuspense(
+	lazy(async () => import('@pages/SignUp')),
 	Loading
 )
-const Login = WithSuspense(
-	lazy(async () => import('@pages/Login')),
+const SignIn = WithSuspense(
+	lazy(async () => import('@pages/SignIn')),
 	Loading
 )
 
@@ -26,8 +26,8 @@ export const Routing = () => {
 				<Route element={<Layout />}>
 					<Route path={ROUTES.HOME} element={<Home />} />
 					<Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
-					<Route path={ROUTES.REGISTRATION} element={<Registration />} />
-					<Route path={ROUTES.LOGIN} element={<Login />} />
+					<Route path={ROUTES.SIGN_UP} element={<SignUp />} />
+					<Route path={ROUTES.SIGN_IN} element={<SignIn />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

@@ -22,12 +22,12 @@ const Layout = () => {
 				</NavbarBrand>
 				<NavbarContent justify='end'>
 					<NavbarItem>
-						<Button as={Link} href={ROUTES.REGISTRATION} variant='bordered'>
+						<Button as={Link} href={ROUTES.SIGN_UP} variant='bordered'>
 							Sign up
 						</Button>
 					</NavbarItem>
 					<NavbarItem>
-						<Button as={Link} href={ROUTES.LOGIN} variant='light'>
+						<Button as={Link} href={ROUTES.SIGN_IN} variant='light'>
 							Sign in
 						</Button>
 					</NavbarItem>
