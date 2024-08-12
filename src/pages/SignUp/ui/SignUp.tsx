@@ -1,10 +1,10 @@
-import { AuthForm } from '@features/AuthForm'
+import { SignUpForm } from '@features/SignUpForm'
 import { FC } from 'react'
 
 const SignUp: FC = () => {
 	return (
 		<div>
-			<AuthForm />
+			<SignUpForm />
 		</div>
 	)
 }
