@@ -9,8 +9,8 @@ export const SignUpForm = () => {
 	} = useAuthForm(AuthFormTypes.SignInForm)
 
 	return (
-		<div className='mx-auto flex flex-col max-w-xs'>
-			<form className='flex flex-col gap-4' onSubmit={onSubmit}>
+		<div className='mx-auto flex flex-col gap-4 max-w-xs'>
+			<form className='flex flex-col gap-3' onSubmit={onSubmit}>
 				<Input
 					{...register('email')}
 					isRequired
