@@ -1,4 +1,4 @@
-import { SignInForm } from '@features/SignInForm'
+import { SignInForm } from '@widgets/SignInForm'
 import { FC } from 'react'
 
 const SignIn: FC = () => {
