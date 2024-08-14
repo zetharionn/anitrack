@@ -13,7 +13,7 @@ const Home: FC = () => {
 				</span>
 			</h1>
 			<p className='md:text-xl lg:text-2xl'>
-				Watch your favorite anime and track watch time with AniTrack
+				Watch your favorite anime and track watch time!
 			</p>
 			<div className='flex flex-row gap-4'>
 				<Button
