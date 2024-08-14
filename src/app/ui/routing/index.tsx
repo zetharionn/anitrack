@@ -1,10 +1,11 @@
 import { lazy } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import Layout from '@pages/Layout'
 import Loading from '@pages/Loading'
 import NotFound from '@pages/NotFound'
 import { WithSuspense } from '@shared/lib'
 import { ROUTES } from '@shared/lib'
+import { NextUIProvider } from '@nextui-org/react'
 
 const Home = WithSuspense(
 	lazy(async () => import('@pages/Home')),
@@ -20,8 +21,10 @@ const SignIn = WithSuspense(
 )
 
 export const Routing = () => {
+	const navigate = useNavigate()
+
 	return (
-		<BrowserRouter>
+		<NextUIProvider navigate={navigate}>
 			<Routes>
 				<Route element={<Layout />}>
 					<Route path={ROUTES.HOME} element={<Home />} />
@@ -30,6 +33,6 @@ export const Routing = () => {
 					<Route path={ROUTES.SIGN_IN} element={<SignIn />} />
 				</Route>
 			</Routes>
-		</BrowserRouter>
+		</NextUIProvider>
 	)
 }
