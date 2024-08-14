@@ -3,14 +3,18 @@ import { FC } from 'react'
 
 const SignIn: FC = () => {
 	return (
-		<div className='mt-32'>
-			<div className='flex flex-col mx-auto mb-2 max-w-xs'>
-				<h1 className='lg:text-3xl md:text-2xl sm:text-xl font-bold'>
-					Sign In
-				</h1>
-				<p className='font-thin'>Enter your email and password</p>
+		<div className='flex items-center justify-center h-[85vh]'>
+			<div className='flex flex-col gap-4 lg:w-[20vw] md:w-[40vw] sm:w-[60vw]'>
+				<div className='flex flex-col text-center'>
+					<h1 className='md:text-3xl sm:text-2xl font-medium'>
+						<span>Welcome back</span>
+					</h1>
+					<p className='font-thin md:text-xl sm:text-lg'>
+						Enter your email and password
+					</p>
+				</div>
+				<SignInForm />
 			</div>
-			<SignInForm />
 		</div>
 	)
 }
