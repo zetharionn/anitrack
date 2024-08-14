@@ -9,14 +9,14 @@ export const SignInForm = () => {
 	} = useAuthForm(AuthFormTypes.SignInForm)
 
 	return (
-		<div className='mx-auto flex flex-col gap-4 max-w-xs'>
+		<div className='flex flex-col gap-4'>
 			<form className='flex flex-col gap-3' onSubmit={onSubmit}>
 				<Input
 					{...register('email')}
 					isRequired
 					type='email'
-					radius='md'
 					variant='bordered'
+					radius='sm'
 					label='Email'
 					isInvalid={!!errors.email}
 					errorMessage={errors.email?.message}
@@ -25,13 +25,15 @@ export const SignInForm = () => {
 					{...register('password')}
 					isRequired
 					type='password'
-					radius='md'
 					variant='bordered'
+					radius='sm'
 					label='Password'
 					isInvalid={!!errors.password}
 					errorMessage={errors.password?.message}
 				/>
-				<Button radius='sm'>Sign In</Button>
+				<Button type='submit' radius='sm'>
+					Sign In
+				</Button>
 			</form>
 		</div>
 	)
