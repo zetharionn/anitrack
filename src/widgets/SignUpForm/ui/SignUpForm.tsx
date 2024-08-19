@@ -6,7 +6,7 @@ export const SignUpForm = () => {
 		onSubmit,
 		register,
 		formState: { errors }
-	} = useAuthForm(AuthFormTypes.SignInForm)
+	} = useAuthForm(AuthFormTypes.SignUpForm)
 
 	return (
 		<div className='flex flex-col gap-4'>
