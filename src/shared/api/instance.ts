@@ -1,5 +1,5 @@
 import { createClient, SupabaseClientOptions } from '@supabase/supabase-js'
-import { AuthService } from './services'
+import { AuthService } from './services/AuthService'
 
 const options: SupabaseClientOptions<'public'> | undefined = {}
 
