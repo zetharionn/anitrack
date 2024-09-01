@@ -1,5 +1,6 @@
-import { SupabaseClient } from '@supabase/supabase-js'
-import { IAuthService } from './auth.types'
+import { AuthChangeEvent, Session, SupabaseClient } from '@supabase/supabase-js'
+import { AuthEvents } from './auth.types'
+import type { IAuthService } from './auth.types'
 
 export class AuthService implements IAuthService {
 	readonly supabaseClient: SupabaseClient
@@ -35,5 +36,16 @@ export class AuthService implements IAuthService {
 		} = await this.supabaseClient.auth.getSession()
 		if (error) throw error
 		return session
+	}
+
+	listenAuthEvent = async (
+		authEvent: AuthEvents,
+		callback: (event?: AuthChangeEvent, session?: Session | null) => void
+	) => {
+		this.supabaseClient.auth.onAuthStateChange((event, session) => {
+			if (event === authEvent) {
+				callback(event, session)
+			}
+		})
 	}
 }
