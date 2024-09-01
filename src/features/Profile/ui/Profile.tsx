@@ -1,3 +1,4 @@
+import { useAuthStore } from '@entities/user'
 import {
 	Avatar,
 	Dropdown,
@@ -5,19 +6,18 @@ import {
 	DropdownMenu,
 	DropdownTrigger
 } from '@nextui-org/react'
-import { authService } from '@shared/api'
 import { memo } from 'react'
 
 export const Profile = memo(() => {
+	const signOut = useAuthStore(state => state.signOut)
+
 	return (
 		<Dropdown>
 			<DropdownTrigger>
 				<Avatar isBordered />
 			</DropdownTrigger>
 			<DropdownMenu>
-				<DropdownItem onClick={() => authService.signOut()}>
-					Sign Out
-				</DropdownItem>
+				<DropdownItem onClick={signOut}>Sign Out</DropdownItem>
 			</DropdownMenu>
 		</Dropdown>
 	)

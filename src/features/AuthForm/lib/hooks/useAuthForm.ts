@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { AuthFormTypes, AuthSchema, AuthType } from '../constants'
-import { authService } from '@shared/api'
+import { useAuthStore } from '@entities/user'
 
 export const useAuthForm = (authFormType: AuthFormTypes) => {
 	const {
@@ -12,11 +12,14 @@ export const useAuthForm = (authFormType: AuthFormTypes) => {
 		resolver: zodResolver(AuthSchema)
 	})
 
+	const signUp = useAuthStore(state => state.signUp)
+	const signIn = useAuthStore(state => state.signIn)
+
 	const onSubmit = handleSubmit(data => {
 		if (authFormType === AuthFormTypes.SignUpForm) {
-			authService.signUp(data.email, data.password)
+			signUp(data.email, data.password)
 		} else {
-			authService.signIn(data.email, data.password)
+			signIn(data.email, data.password)
 		}
 	})
 

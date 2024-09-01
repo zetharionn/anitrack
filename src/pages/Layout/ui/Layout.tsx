@@ -8,8 +8,12 @@ import {
 	NavbarItem
 } from '@nextui-org/react'
 import { ROUTES } from '@shared/lib'
+import { useAuthStore } from '@entities/user'
+import { Profile } from '@features/Profile'
 
 const Layout = () => {
+	const isAuth = useAuthStore(state => state.isAuth)
+
 	return (
 		<>
 			<Navbar>
@@ -21,16 +25,24 @@ const Layout = () => {
 					</Link>
 				</NavbarBrand>
 				<NavbarContent justify='end'>
-					<NavbarItem>
-						<Button as={Link} href={ROUTES.SIGN_UP} variant='bordered'>
-							Sign up
-						</Button>
-					</NavbarItem>
-					<NavbarItem>
-						<Button as={Link} href={ROUTES.SIGN_IN} variant='light'>
-							Sign in
-						</Button>
-					</NavbarItem>
+					{isAuth ? (
+						<NavbarItem>
+							<Profile />
+						</NavbarItem>
+					) : (
+						<>
+							<NavbarItem>
+								<Button as={Link} href={ROUTES.SIGN_UP} variant='bordered'>
+									Sign up
+								</Button>
+							</NavbarItem>
+							<NavbarItem>
+								<Button as={Link} href={ROUTES.SIGN_IN} variant='light'>
+									Sign in
+								</Button>
+							</NavbarItem>
+						</>
+					)}
 				</NavbarContent>
 			</Navbar>
 			<Outlet />
