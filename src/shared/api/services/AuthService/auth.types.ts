@@ -13,8 +13,8 @@ export interface IAuthService {
 	getSession: () => Promise<Session | null>
 	getUser: () => Promise<User | null>
 	listenAuthEvent: (
-		authEvent: AuthEvents,
-		callback: (event?: AuthChangeEvent, session?: Session | null) => void
+		callback: (event?: AuthChangeEvent, session?: Session | null) => void,
+		authEvent?: AuthEvents
 	) => void
 }
 

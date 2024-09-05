@@ -48,13 +48,11 @@ export class AuthService implements IAuthService {
 	}
 
 	async listenAuthEvent(
-		authEvent: AuthEvents,
-		callback: (event?: AuthChangeEvent, session?: Session | null) => void
+		callback: (event?: AuthChangeEvent, session?: Session | null) => void,
+		authEvent?: AuthEvents
 	) {
 		this.supabaseClient.auth.onAuthStateChange((event, session) => {
-			if (event === authEvent) {
-				callback(event, session)
-			}
+			callback(authEvent ?? event, session)
 		})
 	}
 }
