@@ -1,1 +1,1 @@
-export { default } from './ui/Home'
+export { default } from './ui'

@@ -1,8 +1,8 @@
-import { useAuthStore } from '@entities/user'
-import { SignInForm } from '@widgets/SignInForm'
 import { FC } from 'react'
 import { Navigate } from 'react-router-dom'
 import { ROUTES } from '@shared/lib'
+import { useAuthStore } from '@entities/user'
+import { AuthForm, AuthFormTypes } from '@features/AuthForm'
 
 const SignIn: FC = () => {
 	const isAuth = useAuthStore(state => state.isAuth)
@@ -19,7 +19,7 @@ const SignIn: FC = () => {
 						Enter your email and password
 					</p>
 				</div>
-				<SignInForm />
+				<AuthForm AuthFormType={AuthFormTypes.SignInForm} />
 			</div>
 		</div>
 	)

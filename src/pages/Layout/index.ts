@@ -1,1 +1,1 @@
-export { default } from './ui/Layout'
+export { default } from './ui'
