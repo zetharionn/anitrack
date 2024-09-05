@@ -8,7 +8,7 @@ export class AuthService implements IAuthService {
 		this.supabaseClient = supabase
 	}
 
-	signUp = async (email: string, password: string) => {
+	async signUp(email: string, password: string) {
 		const { error } = await this.supabaseClient.auth.signUp({
 			email,
 			password
@@ -16,7 +16,7 @@ export class AuthService implements IAuthService {
 		if (error) throw error
 	}
 
-	signIn = async (email: string, password: string) => {
+	async signIn(email: string, password: string) {
 		const { error } = await this.supabaseClient.auth.signInWithPassword({
 			email,
 			password
@@ -24,12 +24,12 @@ export class AuthService implements IAuthService {
 		if (error) throw error
 	}
 
-	signOut = async () => {
+	async signOut() {
 		const { error } = await this.supabaseClient.auth.signOut()
 		if (error) throw error
 	}
 
-	getSession = async () => {
+	async getSession() {
 		const {
 			data: { session },
 			error
@@ -38,14 +38,21 @@ export class AuthService implements IAuthService {
 		return session
 	}
 
-	listenAuthEvent = async (
-		authEvent: AuthEvents,
-		callback: (event?: AuthChangeEvent, session?: Session | null) => void
-	) => {
+	async getUser() {
+		const {
+			data: { user },
+			error
+		} = await this.supabaseClient.auth.getUser()
+		if (error) throw error
+		return user
+	}
+
+	async listenAuthEvent(
+		callback: (event?: AuthChangeEvent, session?: Session | null) => void,
+		authEvent?: AuthEvents
+	) {
 		this.supabaseClient.auth.onAuthStateChange((event, session) => {
-			if (event === authEvent) {
-				callback(event, session)
-			}
+			callback(authEvent ?? event, session)
 		})
 	}
 }

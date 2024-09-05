@@ -1,7 +1,8 @@
 import type {
 	SupabaseClient,
 	Session,
-	AuthChangeEvent
+	AuthChangeEvent,
+	User
 } from '@supabase/supabase-js'
 
 export interface IAuthService {
@@ -10,9 +11,10 @@ export interface IAuthService {
 	signIn: (email: string, password: string) => void
 	signOut: () => void
 	getSession: () => Promise<Session | null>
+	getUser: () => Promise<User | null>
 	listenAuthEvent: (
-		authEvent: AuthEvents,
-		callback: (event?: AuthChangeEvent, session?: Session | null) => void
+		callback: (event?: AuthChangeEvent, session?: Session | null) => void,
+		authEvent?: AuthEvents
 	) => void
 }
 
