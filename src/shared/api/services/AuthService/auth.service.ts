@@ -38,6 +38,15 @@ export class AuthService implements IAuthService {
 		return session
 	}
 
+	getUser = async () => {
+		const {
+			data: { user },
+			error
+		} = await this.supabaseClient.auth.getUser()
+		if (error) throw error
+		return user
+	}
+
 	listenAuthEvent = async (
 		authEvent: AuthEvents,
 		callback: (event?: AuthChangeEvent, session?: Session | null) => void
