@@ -1,12 +1,16 @@
-import { useAuthForm, AuthFormTypes } from '@features/AuthForm'
-import { Button, Input } from '@nextui-org/react'
+import { Input, Button } from '@nextui-org/react'
+import { useAuthForm, AuthFormTypes } from '../lib'
 
-export const SignUpForm = () => {
+export interface IAuthForm {
+	AuthFormType: AuthFormTypes
+}
+
+export const AuthForm = ({ AuthFormType }: IAuthForm) => {
 	const {
 		onSubmit,
-		register,
-		formState: { errors }
-	} = useAuthForm(AuthFormTypes.SignUpForm)
+		formState: { errors },
+		register
+	} = useAuthForm(AuthFormType)
 
 	return (
 		<div className='flex flex-col gap-4'>
@@ -32,7 +36,7 @@ export const SignUpForm = () => {
 					errorMessage={errors.password?.message}
 				/>
 				<Button type='submit' radius='sm'>
-					Sign Up
+					{AuthFormType === AuthFormTypes.SignInForm ? 'Sign In' : 'Sign Up'}
 				</Button>
 			</form>
 		</div>
