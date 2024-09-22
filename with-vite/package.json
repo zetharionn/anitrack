@@ -1,5 +1,5 @@
 {
-  "name": "anitrack",
+  "name": "with-vite",
   "private": true,
   "scripts": {
     "build": "turbo build",
