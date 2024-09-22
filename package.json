@@ -1,6 +1,11 @@
 {
 	"name": "anitrack",
+	"version": "1.0.0",
 	"private": true,
+	"description": "Watch and Track on AniTrack",
+	"author": "zetharionn",
+	"license": "MIT",
+	"type": "module",
 	"scripts": {
 		"build": "turbo build",
 		"dev": "turbo dev",
@@ -10,6 +15,22 @@
 		"turbo": "^2.1.2",
 		"typescript": "^5.4.5"
 	},
+	"homepage": "https://github.com/zetharionn/anitrack",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/zetharionn/anitrack"
+	},
+	"bugs": {
+		"url": "https://github.com/zetharionn/anitrack/issues"
+	},
+	"keywords": [
+		"react",
+		"tracker",
+		"typescript",
+		"anime",
+		"zustand",
+		"anitrack"
+	],
 	"packageManager": "pnpm@8.15.6",
 	"engines": {
 		"node": ">=18"
