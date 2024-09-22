@@ -9,9 +9,11 @@
 	"scripts": {
 		"build": "turbo build",
 		"dev": "turbo dev",
-		"lint": "turbo lint"
+		"lint": "turbo lint",
+		"prepare": "husky"
 	},
 	"devDependencies": {
+		"husky": "^9.1.6",
 		"turbo": "^2.1.2",
 		"typescript": "^5.4.5"
 	},
