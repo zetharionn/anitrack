@@ -1,11 +1,8 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# Dependencies
 node_modules
 .pnp
 .pnp.js
 
-# Local env files
+# ENV Files
 .env
 .env.local
 .env.development.local
@@ -21,18 +18,30 @@ coverage
 # Vercel
 .vercel
 
-# Build Outputs
+# Build
 .next/
 out/
 build
 dist
+dist-ssr
 
-
-# Debug
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # Misc
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 *.pem
