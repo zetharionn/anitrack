@@ -29,6 +29,9 @@ importers:
 
   apps/frontend:
     dependencies:
+      '@repo/biome-config':
+        specifier: workspace:*
+        version: link:../../packages/biome-config
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -36,6 +39,9 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
+      '@biomejs/biome':
+        specifier: ^1.9.2
+        version: 1.9.2
       '@eslint/js':
         specifier: ^9.9.0
         version: 9.11.0
