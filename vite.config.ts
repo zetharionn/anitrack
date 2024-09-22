@@ -4,6 +4,13 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
 	plugins: [react()],
+	css: {
+		preprocessorOptions: {
+			scss: {
+				api: 'modern',
+			},
+		},
+	},
 	resolve: {
 		alias: {
 			'@app': path.resolve(__dirname, './src/app'),
