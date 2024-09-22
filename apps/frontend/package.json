@@ -5,8 +5,10 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
+		"lint": "biome check --write ./src/*.*",
+		"lint:formatter": "biome format --write ./src/*.*",
+		"lint:linter": "biome lint --write ./src/*.*",
 		"build": "tsc -b && vite build",
-		"lint": "biome check --write ./",
 		"preview": "vite preview"
 	},
 	"dependencies": {
