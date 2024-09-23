@@ -1,1 +1,0 @@
-export { WithSuspense } from './WithSuspense'
