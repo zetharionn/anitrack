@@ -1,4 +1,5 @@
 import { NextUIProvider } from '@nextui-org/react'
+import Layout from '@pages/Layout'
 import Loading from '@pages/Loading'
 import { ROUTES, withSuspense } from '@shared/lib'
 import { lazy } from 'react'
@@ -15,7 +16,9 @@ export const Routing = () => {
 	return (
 		<NextUIProvider navigate={navigate}>
 			<Routes>
-				<Route path={ROUTES.HOME} element={<Home />} />
+				<Route element={<Layout />}>
+					<Route path={ROUTES.HOME} element={<Home />} />
+				</Route>
 			</Routes>
 		</NextUIProvider>
 	)
