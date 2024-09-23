@@ -1,12 +1,12 @@
 import { Input, Button } from '@nextui-org/react'
 import { useAuthForm, AuthFormTypes } from '../lib'
-import { FC } from 'react'
+import { FC, memo } from 'react'
 
 export interface IAuthForm {
 	AuthFormType: AuthFormTypes
 }
 
-export const AuthForm: FC<IAuthForm> = ({ AuthFormType }) => {
+export const AuthForm: FC<IAuthForm> = memo(({ AuthFormType }) => {
 	const {
 		onSubmit,
 		formState: { errors },
@@ -42,4 +42,4 @@ export const AuthForm: FC<IAuthForm> = ({ AuthFormType }) => {
 			</form>
 		</div>
 	)
-}
+})
