@@ -13,6 +13,10 @@ const SignIn = withSuspense(
 	lazy(async () => import('@pages/SignIn')),
 	Loading
 )
+const SignUp = withSuspense(
+	lazy(async () => import('@pages/SignUp')),
+	Loading
+)
 
 export const Routing = () => {
 	const navigate = useNavigate()
@@ -23,6 +27,7 @@ export const Routing = () => {
 				<Route element={<Layout />}>
 					<Route path={ROUTES.HOME} element={<Home />} />
 					<Route path={ROUTES.SIGN_IN} element={<SignIn />} />
+					<Route path={ROUTES.SIGN_UP} element={<SignUp />} />
 				</Route>
 			</Routes>
 		</NextUIProvider>
