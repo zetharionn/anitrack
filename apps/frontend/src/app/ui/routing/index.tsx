@@ -17,6 +17,10 @@ const SignUp = withSuspense(
 	lazy(async () => import('@pages/SignUp')),
 	Loading
 )
+const NotFound = withSuspense(
+	lazy(async () => import('@pages/NotFound')),
+	Loading
+)
 
 export const Routing = () => {
 	const navigate = useNavigate()
@@ -28,6 +32,7 @@ export const Routing = () => {
 					<Route path={ROUTES.HOME} element={<Home />} />
 					<Route path={ROUTES.SIGN_IN} element={<SignIn />} />
 					<Route path={ROUTES.SIGN_UP} element={<SignUp />} />
+					<Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
 				</Route>
 			</Routes>
 		</NextUIProvider>
