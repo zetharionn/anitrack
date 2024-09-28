@@ -33,6 +33,7 @@
 		"typescript",
 		"anime",
 		"zustand",
+		"turborepo",
 		"anitrack"
 	],
 	"packageManager": "pnpm@8.15.9",
