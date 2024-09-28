@@ -4,6 +4,7 @@
 	"tasks": {
 		"build": {
 			"dependsOn": ["^build"],
+			"env": ["VITE_SUPABASE_URL", "VITE_SUPABASE_KEY"],
 			"outputs": ["dist/**"]
 		},
 		"lint": {
