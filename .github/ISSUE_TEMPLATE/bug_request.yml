@@ -13,6 +13,6 @@ body:
     id: reproducibility
     attributes:
       label: How to reproduce
-      description: Skip if it can't be reproduced. Describe how to reproduce the bug you found. Describe as accurately and in detail as possible.
+      description: If you can't reproduce it, put a label called "Cant reproduce" and skip it. Describe how to reproduce the bug you found. Describe as accurately and in detail as possible.
     validations:
       required: false
