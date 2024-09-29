@@ -1,4 +1,4 @@
-import { z } from 'zod'
-import { AuthSchema } from './AuthSchema'
+import type { z } from 'zod'
+import type { AuthSchema } from './AuthSchema'
 
 export type AuthType = z.infer<typeof AuthSchema>

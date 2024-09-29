@@ -1,6 +1,10 @@
+import type {
+	AuthChangeEvent,
+	Session,
+	SupabaseClient
+} from '@supabase/supabase-js'
 import type { IAuthService } from './auth.types'
-import { AuthChangeEvent, Session, SupabaseClient } from '@supabase/supabase-js'
-import { AuthEvents } from './auth.types'
+import type { AuthEvents } from './auth.types'
 
 export class AuthService implements IAuthService {
 	readonly supabaseClient: SupabaseClient
@@ -11,7 +15,7 @@ export class AuthService implements IAuthService {
 	async signUp(email: string, password: string) {
 		const { error } = await this.supabaseClient.auth.signUp({
 			email,
-			password,
+			password
 		})
 		if (error) throw error
 	}
@@ -19,7 +23,7 @@ export class AuthService implements IAuthService {
 	async signIn(email: string, password: string) {
 		const { error } = await this.supabaseClient.auth.signInWithPassword({
 			email,
-			password,
+			password
 		})
 		if (error) throw error
 	}
@@ -32,7 +36,7 @@ export class AuthService implements IAuthService {
 	async getSession() {
 		const {
 			data: { session },
-			error,
+			error
 		} = await this.supabaseClient.auth.getSession()
 		if (error) throw error
 		return session
@@ -41,7 +45,7 @@ export class AuthService implements IAuthService {
 	async getUser() {
 		const {
 			data: { user },
-			error,
+			error
 		} = await this.supabaseClient.auth.getUser()
 		if (error) throw error
 		return user

@@ -1,8 +1,8 @@
 import type {
-	SupabaseClient,
-	Session,
 	AuthChangeEvent,
-	User,
+	Session,
+	SupabaseClient,
+	User
 } from '@supabase/supabase-js'
 
 export interface IAuthService {
@@ -18,12 +18,12 @@ export interface IAuthService {
 	) => void
 }
 
-export const enum AuthEvents {
+export enum AuthEvents {
 	INITIAL_SESSION = 'INITIAL_SESSION',
 	MFA_CHALLENGE_VERIFIED = 'MFA_CHALLENGE_VERIFIED',
 	PASSWORD_RECOVERY = 'PASSWORD_RECOVERY',
 	SIGNED_IN = 'SIGNED_IN',
 	SIGNED_OUT = 'SIGNED_OUT',
 	TOKEN_REFRESHED = 'TOKEN_REFRESHED',
-	USER_UPDATED = 'USER_UPDATED',
+	USER_UPDATED = 'USER_UPDATED'
 }
