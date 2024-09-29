@@ -1,15 +1,15 @@
-import { Outlet } from 'react-router-dom'
+import { useAuthStore } from '@entities/user'
+import { Profile } from '@features/Profile'
 import {
 	Button,
 	Link,
 	Navbar,
 	NavbarBrand,
 	NavbarContent,
-	NavbarItem,
+	NavbarItem
 } from '@nextui-org/react'
 import { ROUTES } from '@shared/lib'
-import { useAuthStore } from '@entities/user'
-import { Profile } from '@features/Profile'
+import { Outlet } from 'react-router-dom'
 
 const Layout = () => {
 	const isAuth = useAuthStore(state => state.isAuth)

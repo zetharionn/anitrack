@@ -1,7 +1,7 @@
-import { Navigate } from 'react-router-dom'
-import { ROUTES } from '@shared/lib'
 import { useAuthStore } from '@entities/user'
 import { AuthForm, AuthFormTypes } from '@features/AuthForm'
+import { ROUTES } from '@shared/lib'
+import { Navigate } from 'react-router-dom'
 
 const SignIn = () => {
 	const isAuth = useAuthStore(state => state.isAuth)

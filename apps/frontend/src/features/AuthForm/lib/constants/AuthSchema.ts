@@ -5,5 +5,5 @@ export const AuthSchema = z.object({
 	password: z
 		.string()
 		.min(8, { message: 'Password is too short' })
-		.max(16, { message: 'Password is too long' }),
+		.max(16, { message: 'Password is too long' })
 })

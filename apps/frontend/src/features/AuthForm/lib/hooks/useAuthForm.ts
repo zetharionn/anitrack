@@ -1,15 +1,15 @@
+import { useAuthStore } from '@entities/user'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { AuthFormTypes, AuthSchema, AuthType } from '../constants'
-import { useAuthStore } from '@entities/user'
+import { AuthFormTypes, AuthSchema, type AuthType } from '../constants'
 
 export const useAuthForm = (authFormType: AuthFormTypes) => {
 	const {
 		handleSubmit,
 		formState: { errors },
-		register,
+		register
 	} = useForm<AuthType>({
-		resolver: zodResolver(AuthSchema),
+		resolver: zodResolver(AuthSchema)
 	})
 
 	const signUp = useAuthStore(state => state.signUp)

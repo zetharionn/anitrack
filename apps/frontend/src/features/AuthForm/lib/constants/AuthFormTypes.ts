@@ -1,4 +1,4 @@
-export const enum AuthFormTypes {
+export enum AuthFormTypes {
 	SignInForm = 'SignInForm',
-	SignUpForm = 'SignUpForm',
+	SignUpForm = 'SignUpForm'
 }

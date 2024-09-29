@@ -4,7 +4,7 @@ import {
 	Dropdown,
 	DropdownItem,
 	DropdownMenu,
-	DropdownTrigger,
+	DropdownTrigger
 } from '@nextui-org/react'
 import { memo } from 'react'
 
