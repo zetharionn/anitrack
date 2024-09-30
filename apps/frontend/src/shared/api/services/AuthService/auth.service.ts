@@ -38,8 +38,7 @@ export class AuthService implements IAuthService {
 			data: { session },
 			error
 		} = await this.supabaseClient.auth.getSession()
-		if (error) throw error
-		return session
+		return { session, error }
 	}
 
 	async getUser() {
@@ -47,8 +46,7 @@ export class AuthService implements IAuthService {
 			data: { user },
 			error
 		} = await this.supabaseClient.auth.getUser()
-		if (error) throw error
-		return user
+		return { user, error }
 	}
 
 	async listenAuthEvent(
