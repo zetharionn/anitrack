@@ -1,6 +1,6 @@
 import { useAuthStore } from '@entities/user/model'
 import { authService } from '@shared/api'
-import { useEffect, type ComponentType } from 'react'
+import { type ComponentType, useEffect } from 'react'
 
 export const withAuthCheck = <T extends object>(
 	Component: ComponentType<T>
