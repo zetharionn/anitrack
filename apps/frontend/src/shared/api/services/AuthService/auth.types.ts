@@ -1,5 +1,6 @@
 import type {
 	AuthChangeEvent,
+	AuthError,
 	Session,
 	SupabaseClient,
 	User
@@ -10,8 +11,8 @@ export interface IAuthService {
 	signUp: (email: string, password: string) => void
 	signIn: (email: string, password: string) => void
 	signOut: () => void
-	getSession: () => Promise<Session | null>
-	getUser: () => Promise<User | null>
+	getSession: () => Promise<SessionResponse>
+	getUser: () => Promise<UserResponse>
 	listenAuthEvent: (
 		callback: (event?: AuthChangeEvent, session?: Session | null) => void,
 		authEvent?: AuthEvents
@@ -26,4 +27,14 @@ export enum AuthEvents {
 	SIGNED_OUT = 'SIGNED_OUT',
 	TOKEN_REFRESHED = 'TOKEN_REFRESHED',
 	USER_UPDATED = 'USER_UPDATED'
+}
+
+export interface SessionResponse {
+	session: Session | null
+	error: AuthError | null
+}
+
+export interface UserResponse {
+	user: User | null
+	error: AuthError | null
 }
