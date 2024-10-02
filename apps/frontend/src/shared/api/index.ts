@@ -1,1 +1,1 @@
-export { authService } from './instance'
+export { authService, animeService } from './instance'
