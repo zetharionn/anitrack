@@ -18,6 +18,13 @@ export const useAuthStore = create<IAuthStore>()(
 			signOut() {
 				authService.signOut()
 				set({ isAuth: false })
+			},
+			checkAuth() {
+				authService.getUser().then(res => {
+					if (res.error) {
+						this.signOut()
+					}
+				})
 			}
 		}),
 		{

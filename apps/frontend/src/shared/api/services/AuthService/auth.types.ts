@@ -13,7 +13,6 @@ export interface IAuthService {
 	signOut: () => void
 	getSession: () => Promise<SessionResponse>
 	getUser: () => Promise<UserResponse>
-	checkAuth: () => void
 	listenAuthEvent: (
 		callback: (event?: AuthChangeEvent, session?: Session | null) => void,
 		authEvent?: AuthEvents
