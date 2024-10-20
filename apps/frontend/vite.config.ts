@@ -1,18 +1,9 @@
 import path from 'node:path'
 import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
-import biomePlugin from 'vite-plugin-biome'
 
 export default defineConfig({
-	plugins: [
-		react(),
-		biomePlugin({
-			mode: 'check',
-			files: './src/*.*',
-			applyFixes: true,
-			failOnError: false
-		})
-	],
+	plugins: [react()],
 	css: {
 		preprocessorOptions: {
 			scss: {
