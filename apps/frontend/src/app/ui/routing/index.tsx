@@ -1,3 +1,4 @@
+import { ProtectedRoute } from '@features/ProtectedRoute'
 import { NextUIProvider } from '@nextui-org/react'
 import Layout from '@pages/Layout'
 import Loading from '@pages/Loading'
@@ -21,6 +22,10 @@ const NotFound = withSuspense(
 	lazy(async () => import('@pages/NotFound')),
 	Loading
 )
+const Catalog = withSuspense(
+	lazy(async () => import('@pages/Catalog')),
+	Loading
+)
 
 export const Routing = () => {
 	const navigate = useNavigate()
@@ -33,6 +38,9 @@ export const Routing = () => {
 					<Route path={ROUTES.SIGN_IN} element={<SignIn />} />
 					<Route path={ROUTES.SIGN_UP} element={<SignUp />} />
 					<Route path={ROUTES.NOT_FOUND} element={<NotFound />} />
+					<Route element={<ProtectedRoute />}>
+						<Route path={ROUTES.CATALOG} element={<Catalog />} />
+					</Route>
 				</Route>
 			</Routes>
 		</NextUIProvider>
