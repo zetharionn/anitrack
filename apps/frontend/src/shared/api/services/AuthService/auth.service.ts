@@ -49,6 +49,14 @@ export class AuthService implements IAuthService {
 		return { user, error }
 	}
 
+	async checkAuth() {
+		this.getUser().then(res => {
+			if (res.error) {
+				this.signOut()
+			}
+		})
+	}
+
 	async listenAuthEvent(
 		callback: (event?: AuthChangeEvent, session?: Session | null) => void,
 		authEvent?: AuthEvents
