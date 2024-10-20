@@ -7,15 +7,15 @@ export const useAuthStore = create<IAuthStore>()(
 	persist(
 		set => ({
 			isAuth: false,
-			signUp: (email: string, password: string) => {
+			signUp(email: string, password: string) {
 				authService.signUp(email, password)
 				set({ isAuth: true })
 			},
-			signIn: (email: string, password: string) => {
+			signIn(email: string, password: string) {
 				authService.signIn(email, password)
 				set({ isAuth: true })
 			},
-			signOut: () => {
+			signOut() {
 				authService.signOut()
 				set({ isAuth: false })
 			}
