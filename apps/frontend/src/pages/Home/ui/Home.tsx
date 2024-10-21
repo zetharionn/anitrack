@@ -1,7 +1,10 @@
+import { useAuthStore } from '@entities/user'
 import { Button, Link } from '@nextui-org/react'
 import { ROUTES } from '@shared/lib'
 
 const Home = () => {
+	const isAuth = useAuthStore(state => state.isAuth)
+
 	return (
 		<div className='flex flex-col text-center items-center justify-center gap-4 h-[85vh]'>
 			<div className='absolute z-[-1] w-[256px] h-[256px] rounded-full bg-gradient-to-b from-[#f5d63b] to-[#9739f0] blur-[96px]' />
@@ -21,7 +24,7 @@ const Home = () => {
 					variant='shadow'
 					size='lg'
 					as={Link}
-					href={ROUTES.SIGN_UP}
+					href={isAuth ? ROUTES.CATALOG : ROUTES.SIGN_UP}
 				>
 					Start Tracking
 				</Button>

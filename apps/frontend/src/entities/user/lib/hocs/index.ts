@@ -1,1 +1,0 @@
-export { withAuthCheck } from './withAuthCheck'

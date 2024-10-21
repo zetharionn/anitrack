@@ -1,33 +1,24 @@
-import react from "@vitejs/plugin-react-swc";
-import biomePlugin from "vite-plugin-biome";
-import { defineConfig } from "vite";
-import path from "path";
+import path from 'node:path'
+import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
-	plugins: [
-		react(),
-		biomePlugin({
-			mode: "check",
-			files: "./src/*.*",
-			applyFixes: true,
-			failOnError: false,
-		}),
-	],
+	plugins: [react()],
 	css: {
 		preprocessorOptions: {
 			scss: {
-				api: "modern",
-			},
-		},
+				api: 'modern'
+			}
+		}
 	},
 	resolve: {
 		alias: {
-			"@app": path.resolve(__dirname, "./src/app"),
-			"@pages": path.resolve(__dirname, "./src/pages"),
-			"@widgets": path.resolve(__dirname, "./src/widgets"),
-			"@features": path.resolve(__dirname, "./src/features"),
-			"@entities": path.resolve(__dirname, "./src/entities"),
-			"@shared": path.resolve(__dirname, "./src/shared"),
-		},
-	},
-});
+			'@app': path.resolve(__dirname, './src/app'),
+			'@pages': path.resolve(__dirname, './src/pages'),
+			'@widgets': path.resolve(__dirname, './src/widgets'),
+			'@features': path.resolve(__dirname, './src/features'),
+			'@entities': path.resolve(__dirname, './src/entities'),
+			'@shared': path.resolve(__dirname, './src/shared')
+		}
+	}
+})
