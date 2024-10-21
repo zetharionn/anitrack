@@ -1,5 +1,5 @@
-import { type ComponentType, useEffect } from 'react'
 import { useAuthStore } from '@entities/user'
+import { type ComponentType, useEffect } from 'react'
 
 export const withAuthCheck = <T extends object>(
 	Component: ComponentType<T>
